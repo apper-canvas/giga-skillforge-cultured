@@ -40,26 +40,34 @@ const SubjectModal = ({
     '#F1C40F', '#E67E22', '#1ABC9C', '#34495E'
   ]
 
-  useEffect(() => {
-    if (subject && isOpen) {
-      setFormData({
-        name: subject.name || '',
-        category: subject.category || '',
-        currentLevel: subject.currentLevel || 0,
-        targetLevel: subject.targetLevel || 100,
-        color: subject.color || '#5B47E0'
-      })
-    } else if (isOpen && mode === 'add') {
-      setFormData({
-        name: '',
-        category: '',
-        currentLevel: 0,
-        targetLevel: 100,
-        color: '#5B47E0'
-      })
-    }
-    setErrors({})
-  }, [subject, isOpen, mode])
+useEffect(() => {
+    // Only initialize form data when modal is actually opening
+    if (!isOpen) return
+    
+    // Add small delay to ensure modal state is stable
+    const timeoutId = setTimeout(() => {
+      if (subject && mode !== 'add') {
+        setFormData({
+          name: subject.name || '',
+          category: subject.category || '',
+          currentLevel: subject.currentLevel || 0,
+          targetLevel: subject.targetLevel || 100,
+          color: subject.color || '#5B47E0'
+        })
+      } else if (mode === 'add') {
+        setFormData({
+          name: '',
+          category: '',
+          currentLevel: 0,
+          targetLevel: 100,
+          color: '#5B47E0'
+        })
+      }
+      setErrors({})
+    }, 10) // Small delay to prevent race conditions
+    
+    return () => clearTimeout(timeoutId)
+  }, [isOpen, mode, subject?.Id]) // Use subject.Id instead of entire subject object
 
   const validateForm = () => {
     const newErrors = {}
@@ -95,9 +103,9 @@ const SubjectModal = ({
     
     setLoading(true)
     
-    try {
+try {
       await onSave(formData)
-      onClose()
+      // Don't call onClose here - let parent component handle modal state
     } catch (error) {
       console.error('Error saving subject:', error)
     } finally {
@@ -120,8 +128,8 @@ const SubjectModal = ({
     }
   }
 
-  return (
-    <AnimatePresence>
+return (
+    <AnimatePresence mode="wait">
       {isOpen && (
         <div className="fixed inset-0 z-50 overflow-y-auto">
           <div className="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
@@ -129,14 +137,19 @@ const SubjectModal = ({
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
               className="fixed inset-0 transition-opacity bg-gray-500 bg-opacity-75 backdrop-blur-sm"
               onClick={onClose}
             />
 
-            <motion.div
+<motion.div
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              transition={{ 
+                duration: 0.2,
+                ease: "easeOut"
+              }}
               className="inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl"
             >
               <div className="flex items-center justify-between mb-6">

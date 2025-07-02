@@ -50,11 +50,15 @@ const [subjects, setSubjects] = useState([])
     loadData()
   }, [])
 
-  const handleAddSubject = () => {
-    setModalState({
-      isOpen: true,
-      mode: 'add',
-      subject: null
+const handleAddSubject = () => {
+    // Prevent rapid state changes that could cause modal to close immediately
+    setModalState(prev => {
+      if (prev.isOpen) return prev // Prevent duplicate opens
+      return {
+        isOpen: true,
+        mode: 'add',
+        subject: null
+      }
     })
   }
 
@@ -158,8 +162,14 @@ const [subjects, setSubjects] = useState([])
     }
   }
 
-  const closeModal = () => {
-    setModalState({ isOpen: false, mode: 'add', subject: null })
+const closeModal = () => {
+    // Ensure modal state is properly reset
+    setModalState(prev => ({
+      ...prev,
+      isOpen: false,
+      mode: 'add',
+      subject: null
+    }))
   }
 
   if (loading) return <Loading />
