@@ -35,7 +35,16 @@ const SubjectCard = ({
           <h3 className="text-lg font-display font-semibold text-gray-900 mb-1">
             {subject.name}
           </h3>
-          <Badge variant="default" size="sm">
+<Badge 
+            variant="default" 
+            size="sm"
+            style={{ 
+              backgroundColor: `${subject.color}15`,
+              borderColor: subject.color,
+              color: subject.color
+            }}
+            className="border"
+          >
             {subject.category}
           </Badge>
         </div>

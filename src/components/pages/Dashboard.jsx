@@ -14,11 +14,12 @@ import subjectService from '@/services/api/subjectService'
 import badgeService from '@/services/api/badgeService'
 
 const Dashboard = () => {
-  const [subjects, setSubjects] = useState([])
+const [subjects, setSubjects] = useState([])
   const [badges, setBadges] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
   const [searchQuery, setSearchQuery] = useState('')
+  const [categoryFilter, setCategoryFilter] = useState('')
   const [modalState, setModalState] = useState({
     isOpen: false,
     mode: 'add', // 'add', 'edit', 'update'
