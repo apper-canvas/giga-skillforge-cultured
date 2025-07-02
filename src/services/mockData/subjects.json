@@ -1,0 +1,62 @@
+[
+  {
+    "Id": 1,
+    "name": "Advanced Mathematics",
+    "category": "Mathematics",
+    "currentLevel": 75,
+    "targetLevel": 90,
+    "color": "#5B47E0",
+    "createdAt": "2024-01-15T10:00:00Z",
+    "lastUpdated": "2024-02-20T14:30:00Z"
+  },
+  {
+    "Id": 2,
+    "name": "Physics Fundamentals",
+    "category": "Science",
+    "currentLevel": 60,
+    "targetLevel": 85,
+    "color": "#E91E63",
+    "createdAt": "2024-01-18T09:15:00Z",
+    "lastUpdated": "2024-02-18T11:20:00Z"
+  },
+  {
+    "Id": 3,
+    "name": "Creative Writing",
+    "category": "Language Arts",
+    "currentLevel": 45,
+    "targetLevel": 80,
+    "color": "#F39C12",
+    "createdAt": "2024-01-22T16:45:00Z",
+    "lastUpdated": "2024-02-15T13:10:00Z"
+  },
+  {
+    "Id": 4,
+    "name": "World History",
+    "category": "History",
+    "currentLevel": 85,
+    "targetLevel": 95,
+    "color": "#27AE60",
+    "createdAt": "2024-01-10T08:30:00Z",
+    "lastUpdated": "2024-02-22T10:45:00Z"
+  },
+  {
+    "Id": 5,
+    "name": "Computer Programming",
+    "category": "Technology",
+    "currentLevel": 30,
+    "targetLevel": 75,
+    "color": "#3498DB",
+    "createdAt": "2024-02-01T12:00:00Z",
+    "lastUpdated": "2024-02-19T15:30:00Z"
+  },
+  {
+    "Id": 6,
+    "name": "Digital Art",
+    "category": "Arts",
+    "currentLevel": 55,
+    "targetLevel": 80,
+    "color": "#9B59B6",
+    "createdAt": "2024-01-25T14:15:00Z",
+    "lastUpdated": "2024-02-17T09:45:00Z"
+  }
+]

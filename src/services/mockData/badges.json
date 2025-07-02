@@ -1,0 +1,146 @@
+[
+  {
+    "Id": 1,
+    "name": "First Steps",
+    "description": "Complete 25% of any subject",
+    "icon": "Star",
+    "requirement": {
+      "type": "progress",
+      "subjectId": 1,
+      "level": 25
+    },
+    "unlockedAt": "2024-01-20T12:00:00Z"
+  },
+  {
+    "Id": 2,
+    "name": "Half Way There",
+    "description": "Reach 50% in Math",
+    "icon": "TrendingUp",
+    "requirement": {
+      "type": "progress",
+      "subjectId": 1,
+      "level": 50
+    },
+    "unlockedAt": "2024-02-05T15:30:00Z"
+  },
+  {
+    "Id": 3,
+    "name": "Math Warrior",
+    "description": "Achieve 75% in Math",
+    "icon": "Calculator",
+    "requirement": {
+      "type": "progress",
+      "subjectId": 1,
+      "level": 75
+    },
+    "unlockedAt": "2024-02-20T14:30:00Z"
+  },
+  {
+    "Id": 4,
+    "name": "Physics Explorer",
+    "description": "Start learning Physics",
+    "icon": "Atom",
+    "requirement": {
+      "type": "progress",
+      "subjectId": 2,
+      "level": 25
+    },
+    "unlockedAt": "2024-02-01T10:15:00Z"
+  },
+  {
+    "Id": 5,
+    "name": "Science Student",
+    "description": "Reach 50% in Physics",
+    "icon": "Beaker",
+    "requirement": {
+      "type": "progress",
+      "subjectId": 2,
+      "level": 50
+    },
+    "unlockedAt": "2024-02-18T11:20:00Z"
+  },
+  {
+    "Id": 6,
+    "name": "Creative Mind",
+    "description": "Begin Creative Writing",
+    "icon": "Feather",
+    "requirement": {
+      "type": "progress",
+      "subjectId": 3,
+      "level": 25
+    },
+    "unlockedAt": "2024-02-10T16:00:00Z"
+  },
+  {
+    "Id": 7,
+    "name": "History Buff",
+    "description": "Excel in World History",
+    "icon": "BookOpen",
+    "requirement": {
+      "type": "progress",
+      "subjectId": 4,
+      "level": 75
+    },
+    "unlockedAt": "2024-02-15T12:30:00Z"
+  },
+  {
+    "Id": 8,
+    "name": "Code Rookie",
+    "description": "Start programming journey",
+    "icon": "Code",
+    "requirement": {
+      "type": "progress",
+      "subjectId": 5,
+      "level": 25
+    },
+    "unlockedAt": null
+  },
+  {
+    "Id": 9,
+    "name": "Digital Artist",
+    "description": "Reach halfway in Digital Art",
+    "icon": "Palette",
+    "requirement": {
+      "type": "progress",
+      "subjectId": 6,
+      "level": 50
+    },
+    "unlockedAt": "2024-02-17T09:45:00Z"
+  },
+  {
+    "Id": 10,
+    "name": "Physics Master",
+    "description": "Achieve 75% in Physics",
+    "icon": "Zap",
+    "requirement": {
+      "type": "progress",
+      "subjectId": 2,
+      "level": 75
+    },
+    "unlockedAt": null
+  },
+  {
+    "Id": 11,
+    "name": "Writing Enthusiast",
+    "description": "Reach 50% in Creative Writing",
+    "icon": "PenTool",
+    "requirement": {
+      "type": "progress",
+      "subjectId": 3,
+      "level": 50
+    },
+    "unlockedAt": null
+  },
+  {
+    "Id": 12,
+    "name": "History Master",
+    "description": "Complete World History goals",
+    "icon": "Crown",
+    "requirement": {
+      "type": "progress",
+      "subjectId": 4,
+      "level": 95
+    },
+    "unlockedAt": null
+  }
+]
